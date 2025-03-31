@@ -1,0 +1,24 @@
+# Ignore everything and only include specific files
+*
+!*/
+!.gitignore
+!README.md
+
+# ghostty
+!ghostty/*
+
+# git
+!git/*
+git/config_local
+
+# karabiner
+!karabiner/*
+karabiner/automatic_backups
+
+# zsh
+!zsh/*
+zsh/.zsh_history
+zsh/zsh_local.zsh
+
+# Normally ignored files
+**/.DS_Store
