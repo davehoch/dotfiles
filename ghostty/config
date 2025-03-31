@@ -1,0 +1,9 @@
+theme = Novel
+font-family = Menlo
+font-size = 16
+font-thicken = false
+adjust-cursor-thickness = 3
+window-step-resize = true
+quit-after-last-window-closed = true
+macos-titlebar-style = native
+auto-update = download
