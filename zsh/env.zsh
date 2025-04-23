@@ -1,3 +1,5 @@
+HOMEBREW_PREFIX="$(brew --prefix)"
+
 # Put gui applications in personal Applications folder.  It doesn't need sudo permission.
 export HOMEBREW_CASK_OPTS="--appdir='$HOME/Applications' --require-sha"
 
