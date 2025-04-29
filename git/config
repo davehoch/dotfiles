@@ -1,9 +1,14 @@
 [core]
 	editor = code -w
 	excludesfile = /Users/dhochhauser/.config/git/gitignore_global
-	pager = less -x4 -F
-	hooksPath = ~/.config/git/git_template/hooks
 	fsmonitor = true
+	hooksPath = ~/.config/git/git_template/hooks
+	# pager = less -x4 -F
+	pager = delta
+[delta]
+    navigate = true  # use n and N to move between diff sections
+    light = true     # or light = true, or omit for auto-detection
+	line-numbers = true
 [diff]
 	tool = kdiff3
 [difftool "sourcetree"]
@@ -21,6 +26,7 @@
 	prompt = false
 [merge]
 	tool = kdiff3
+	conflictstyle = zdiff3 # from Delta.  I don't know if I like this.
 [mergetool "sourcetree"]
 	cmd = /Users/dhochhauser/Applications/kdiff3.app/Contents/MacOS/kdiff3 \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
 	trustExitCode = true
