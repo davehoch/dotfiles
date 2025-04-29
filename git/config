@@ -1,57 +1,60 @@
 [alias]
-	difft1 = difftool --tool=difftastic1
-	difft2 = difftool --tool=difftastic2
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen%cr %C(blue)%an%Creset' --abbrev-commit
-	slog = lg
+    difft1 = difftool --tool=difftastic1
+    difft2 = difftool --tool=difftastic2
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen%cr %C(blue)%an%Creset' --abbrev-commit
+    slog = lg
 [core]
-	editor = code -w
-	excludesfile = /Users/dhochhauser/.config/git/gitignore_global
-	fsmonitor = true
-	hooksPath = ~/.config/git/git_template/hooks
-	# pager = less -x4 -F
-	pager = delta
+    editor = code -w
+    excludesfile = /Users/dhochhauser/.config/git/gitignore_global
+    fsmonitor = true
+    hooksPath = ~/.config/git/git_template/hooks
+    # pager = less -x4 -F
+    pager = delta
 [credential]
-	helper = osxkeychain
+    helper = osxkeychain
 [delta]    
-	line-numbers = true
-	light = true     # or light = true, or omit for auto-detection
-	navigate = true  # use n and N to move between diff sections
+    line-numbers = true
+    light = true     # or light = true, or omit for auto-detection
+    navigate = true  # use n and N to move between diff sections
+	true-color = always
 [diff]
-	tool = kdiff3
+    tool = kdiff3
 [difftool]
-	prompt = false
+    prompt = false
 [difftool "kdiff3"]
-	path = kdiff3
+    path = kdiff3
 [difftool "sourcetree"]
-	cmd = /Users/dhochhauser/Applications/kdiff3.app/Contents/MacOS/kdiff3 \"$LOCAL\" \"$REMOTE\"
-	path = 
+    cmd = /Users/dhochhauser/Applications/kdiff3.app/Contents/MacOS/kdiff3 \"$LOCAL\" \"$REMOTE\"
+    path = 
 [fetch]
-	prune = true
+    prune = true
 [filter "lfs"]
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+    clean = git-lfs clean -- %f
 [grep]
-	lineNumber = true
+    lineNumber = true
 [gui]
-	fontdiff = -family Menlo -size 14 -weight normal -slant roman -underline 0 -overstrike 0
-	tabsize = 4
+    fontdiff = -family Menlo -size 14 -weight normal -slant roman -underline 0 -overstrike 0
+    tabsize = 4
+[interactive]
+    diffFilter = delta --color-only
 [merge]
-	tool = kdiff3
-	conflictstyle = zdiff3 # from Delta.  I don't know if I like this.
+    tool = kdiff3
+    conflictstyle = zdiff3 # from Delta.  I don't know if I like this.
 [mergetool]
-	prompt = false
+    prompt = false
 [mergetool "kdiff"]
-	path = kdiff3
+    path = kdiff3
 [mergetool "sourcetree"]
-	cmd = /Users/dhochhauser/Applications/kdiff3.app/Contents/MacOS/kdiff3 \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
-	trustExitCode = true
+    cmd = /Users/dhochhauser/Applications/kdiff3.app/Contents/MacOS/kdiff3 \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
+    trustExitCode = true
 [pull]
-	rebase = true
+    rebase = true
 [rerere]
-	enabled = true
+    enabled = true
 # This should be last.  It is for settings specific to the local machine that should
 # not be committed.
 [include]
-	path = config_local
+    path = config_local
