@@ -1,3 +1,8 @@
+[alias]
+	difft1 = difftool --tool=difftastic1
+	difft2 = difftool --tool=difftastic2
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen%cr %C(blue)%an%Creset' --abbrev-commit
+	slog = lg
 [core]
 	editor = code -w
 	excludesfile = /Users/dhochhauser/.config/git/gitignore_global
@@ -5,68 +10,48 @@
 	hooksPath = ~/.config/git/git_template/hooks
 	# pager = less -x4 -F
 	pager = delta
-[delta]
-    navigate = true  # use n and N to move between diff sections
-    light = true     # or light = true, or omit for auto-detection
+[credential]
+	helper = osxkeychain
+[delta]    
 	line-numbers = true
+	light = true     # or light = true, or omit for auto-detection
+	navigate = true  # use n and N to move between diff sections
 [diff]
 	tool = kdiff3
+[difftool]
+	prompt = false
+[difftool "kdiff3"]
+	path = kdiff3
 [difftool "sourcetree"]
 	cmd = /Users/dhochhauser/Applications/kdiff3.app/Contents/MacOS/kdiff3 \"$LOCAL\" \"$REMOTE\"
 	path = 
-[difftool "kdiff3"]
-	path = kdiff3
-[difftool "p4merge"]
-	cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge $LOCAL $REMOTE
-[difftool "difftastic1"]
-	cmd = difft --display="inline" --tab-width=2 --context=0 "$LOCAL" "$REMOTE"
-[difftool "difftastic2"]
-	cmd = difft --display="side-by-side" --tab-width=2 --context=2 "$LOCAL" "$REMOTE"
-[difftool]
-	prompt = false
-[merge]
-	tool = kdiff3
-	conflictstyle = zdiff3 # from Delta.  I don't know if I like this.
-[mergetool "sourcetree"]
-	cmd = /Users/dhochhauser/Applications/kdiff3.app/Contents/MacOS/kdiff3 \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
-	trustExitCode = true
-[mergetool "kdiff"]
-	path = kdiff3
-[mergetool]
-	prompt = false
-[alias]
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen%cr %C(blue)%an%Creset' --abbrev-commit
-	slog = lg
-	difft1 = difftool --tool=difftastic1
-	difft2 = difftool --tool=difftastic2
-[grep]
-	lineNumber = true
-[filesystem "Oracle Corporation|15|/dev/disk1s2"]
-	timestampResolution = 11000 nanoseconds
-	minRacyThreshold = 0 nanoseconds
-[gui]
-	fontdiff = -family Menlo -size 14 -weight normal -slant roman -underline 0 -overstrike 0
-	tabsize = 4
-[filesystem "Oracle Corporation|14.0.1|/dev/disk1s2"]
-	timestampResolution = 7000 nanoseconds
-	minRacyThreshold = 0 nanoseconds
-[filesystem "Oracle Corporation|16|/dev/disk1s2"]
-	timestampResolution = 11000 nanoseconds
-	minRacyThreshold = 0 nanoseconds
-[credential]
-	helper = osxkeychain
+[fetch]
+	prune = true
 [filter "lfs"]
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
+[grep]
+	lineNumber = true
+[gui]
+	fontdiff = -family Menlo -size 14 -weight normal -slant roman -underline 0 -overstrike 0
+	tabsize = 4
+[merge]
+	tool = kdiff3
+	conflictstyle = zdiff3 # from Delta.  I don't know if I like this.
+[mergetool]
+	prompt = false
+[mergetool "kdiff"]
+	path = kdiff3
+[mergetool "sourcetree"]
+	cmd = /Users/dhochhauser/Applications/kdiff3.app/Contents/MacOS/kdiff3 \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
+	trustExitCode = true
 [pull]
 	rebase = true
-[fetch]
-	prune = true
 [rerere]
 	enabled = true
-# This is for settings specific to the local machine that should
+# This should be last.  It is for settings specific to the local machine that should
 # not be committed.
 [include]
 	path = config_local
