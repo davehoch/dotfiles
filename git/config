@@ -1,10 +1,9 @@
 [alias]
-    difft1 = difftool --tool=difftastic1
-    difft2 = difftool --tool=difftastic2
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen%cr %C(blue)%an%Creset' --abbrev-commit
     slog = lg
 [core]
-    editor = code -w
+    # editor = code -w
+    editor = pico   # pico better than VS Code because it stays in the terminal
     excludesfile = /Users/dhochhauser/.config/git/gitignore_global
     fsmonitor = true
     hooksPath = ~/.config/git/git_template/hooks
