@@ -3,7 +3,7 @@
     slog = lg
 [core]
     # editor = code -w
-    editor = pico   # pico better than VS Code because it stays in the terminal
+    editor = vim   # pico or vim are better than VS Code because it stays in the terminal
     excludesfile = /Users/dhochhauser/.config/git/gitignore_global
     fsmonitor = true
     hooksPath = ~/.config/git/git_template/hooks
@@ -16,15 +16,19 @@
     light = true     # or light = true, or omit for auto-detection
     navigate = true  # use n and N to move between diff sections
 	true-color = always
+    tabs = 4
 [diff]
-    tool = kdiff3
+    tool = code
 [difftool]
     prompt = false
 [difftool "kdiff3"]
     path = kdiff3
 [difftool "sourcetree"]
-    cmd = /Users/dhochhauser/Applications/kdiff3.app/Contents/MacOS/kdiff3 \"$LOCAL\" \"$REMOTE\"
-    path = 
+    cmd = stree "$LOCAL" "$REMOTE"
+[difftool "meld"]
+    cmd = meld "$LOCAL" "$REMOTE"
+[difftool "code"]
+    cmd = code --dir-diff --wait --diff $LOCAL $REMOTE
 [fetch]
     prune = true
 [filter "lfs"]
@@ -50,7 +54,7 @@
     cmd = /Users/dhochhauser/Applications/kdiff3.app/Contents/MacOS/kdiff3 \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
     trustExitCode = true
 [pull]
-    rebase = true
+    # rebase = true # This sucks because it won't let you pull if there are local changes
 [rerere]
     enabled = true
 # This should be last.  It is for settings specific to the local machine that should
