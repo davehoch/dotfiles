@@ -9,9 +9,7 @@ alias ll='ls -lhFG'
 alias lla='ls -alhFG'
 alias ls='ls -FG'
 
-alias tf='terraform'
 alias ql='qlmanage -p "$@" > /dev/null'
-alias vm='versionmanager'
 alias htop='btop'
 
 # see zsh_local.zsh for more aliases
