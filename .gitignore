@@ -15,6 +15,9 @@ git/config_local
 !karabiner/*
 karabiner/automatic_backups
 
+# vim
+!vim/*
+
 # zsh
 !zsh/*
 zsh/.zsh_history
