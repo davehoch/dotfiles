@@ -21,7 +21,7 @@ export EDITOR=code
 # Pipe Highlight to less
 export LESSOPEN="| highlight %s --out-format xterm256 --force -s edit-xcode --no-trailing-nl"
 export LESS=" -R"
-alias less='less --long-prompt --line-numbers --hilite-search --status-column --ignore-case --underline-special --tabs=4 --raw-control-chars'
+alias less='less --long-prompt --line-numbers --hilite-search --status-column --ignore-case --underline-special --tabs=4'
 
 # Use "highlight" in place of "cat"
 # alias cat="highlight $1 --out-format xterm256 -l --force -s edit-xcodet --no-trailing-nl"
