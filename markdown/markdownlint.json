@@ -1,0 +1,14 @@
+{
+  "blanks-around-headings": {
+    "lines_above": 1,
+    "lines_below": -1
+  },
+  "blanks-around-lists": false,
+  "no-bare-urls": false,
+  "blanks-around-fences": false,
+  "line-length": {
+      "line_length": 160,
+      "code_block_line_length": 160,
+      "tables": false
+    }
+}
