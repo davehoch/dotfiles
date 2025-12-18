@@ -2,7 +2,7 @@
 if command -v brew >/dev/null 2>&1; then
     HOMEBREW_PREFIX="$(brew --prefix)"
 else
-    HOMEBREW_PREFIX="/usr"
+    HOMEBREW_PREFIX="/usr/local"
 fi
 
 # Put gui applications in personal Applications folder.  It doesn't need sudo permission.
