@@ -1,4 +1,9 @@
-HOMEBREW_PREFIX="$(brew --prefix)"
+# Homebrew won't be installed on non macOS systems
+if command -v brew >/dev/null 2>&1; then
+    HOMEBREW_PREFIX="$(brew --prefix)"
+else
+    HOMEBREW_PREFIX="/usr"
+fi
 
 # Put gui applications in personal Applications folder.  It doesn't need sudo permission.
 export HOMEBREW_CASK_OPTS="--appdir='$HOME/Applications' --require-sha"
