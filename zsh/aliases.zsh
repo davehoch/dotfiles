@@ -7,7 +7,7 @@ alias diff-pdf='diff-pdf --view --mark-differences'
 
 # check if grep supports --color
 export GREP_COLOR='1;36'
-grep --color=auto < /dev/null &>/dev/null &&
+# grep --color=auto < /dev/null &>/dev/null &&      # This doesn't seem to work
     alias grep='grep --color=auto'
 
 alias ll='ls -lhFG'
