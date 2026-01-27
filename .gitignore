@@ -4,6 +4,9 @@
 !.gitignore
 !README.md
 
+# install is a script for setting up a new machine
+!install
+
 # ghostty
 !ghostty/*
 
@@ -17,6 +20,9 @@ karabiner/automatic_backups
 
 # markdown
 !markdown/*
+
+# setup script
+!setup.sh
 
 # vim
 !vim/*

@@ -5,6 +5,11 @@
 alias cypress='./node_modules/cypress/bin/cypress open --env type=dev --config baseUrl=http://localhost:8080 &'
 alias diff-pdf='diff-pdf --view --mark-differences'
 
+# check if grep supports --color
+export GREP_COLOR='1;36'
+grep --color=auto < /dev/null &>/dev/null &&
+    alias grep='grep --color=auto'
+
 alias ll='ls -lhFG'
 alias lla='ls -alhFG'
 alias ls='ls -FG'

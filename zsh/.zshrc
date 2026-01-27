@@ -1,3 +1,6 @@
+# If not running interactively, don’t do anything
+[[ -n $PS1 ]] || return
+
 source ~/.config/zsh/env.zsh
 source ~/.config/zsh/options.zsh
 source ~/.config/zsh/aliases.zsh
@@ -24,3 +27,5 @@ source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # https://github.com/zsh-users/zsh-syntax-highlighting
 # Load zsh-syntax-highlighting; should be last.
 source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+true

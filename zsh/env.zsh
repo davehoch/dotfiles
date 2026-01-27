@@ -13,6 +13,7 @@ export HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=1
 
 export BROWSER=open
 export EDITOR=code
+export PAGER='less'
 
 #fix for Docker problem:  https://github.com/docker/for-mac/issues/770
 #export DOCKER_HOST=tcp://localhost:1234
