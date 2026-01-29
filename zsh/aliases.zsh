@@ -6,7 +6,7 @@ alias cypress='./node_modules/cypress/bin/cypress open --env type=dev --config b
 alias diff-pdf='diff-pdf --view --mark-differences'
 
 # check if grep supports --color
-export GREP_COLOR='1;36'
+export GREP_COLOR='0;34'
 # grep --color=auto < /dev/null &>/dev/null &&      # This doesn't seem to work
     alias grep='grep --color=auto'
 
