@@ -10,6 +10,7 @@ export HOMEBREW_CASK_OPTS="--appdir='$HOME/Applications' --require-sha"
 
 # only upgrade the things I asked to upgrade, not all dependencies as well
 export HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=1
+export HOMEBREW_NO_ASK=1
 
 export BROWSER=open
 export EDITOR=code
