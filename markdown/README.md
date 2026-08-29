@@ -1,5 +1,11 @@
 # README
 
+## Global markdownlint.json
+
+### VS Code
+
+In settings, this needs to be set to the full path like `$(user_name)/.config/markdown/markdownlint.json`.  `~/.config/...` won't work.
+
 ## Global markdown.css
 
 VS Code will not allow you to point to a `markdown.css` file that is outside of the directory.  Apparently, this is for security reasons.
@@ -12,6 +18,3 @@ Possible solutions:
 ### Typora
 
 Maybe I can symlink the global `markdown.css` to `~/Library/Application Support/abnerworks.Typora/themes`
-
-## markdownlint.json
-
