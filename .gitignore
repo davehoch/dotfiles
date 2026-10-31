@@ -13,6 +13,8 @@
 # git
 !git/*
 git/config_local
+# this is some sort of config file for gitk
+git/gitk
 
 # karabiner
 !karabiner/*
