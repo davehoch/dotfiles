@@ -1,5 +1,6 @@
 {
     "global": { "show_in_menu_bar": false },
+    "machine_specific": { "krbn-457b01b9-8d17-414e-b9ec-eac16f0fd7bd": { "external_editor_path": "/Applications/Visual Studio Code.app" } },
     "profiles": [
         {
             "complex_modifications": {
@@ -755,59 +756,6 @@
                                     {
                                         "key_code": "k",
                                         "modifiers": ["left_control"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Focus Microsoft Teams Meeting Manager Window",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "com.microsoft.teams"
-                                        ],
-                                        "type": "frontmost_application_unless"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "spacebar",
-                                    "modifiers": { "mandatory": ["fn"] }
-                                },
-                                "to": [
-                                    {
-                                        "lazy": true,
-                                        "repeat": true,
-                                        "shell_command": "if [ $(ps aux | grep -v grep | grep -ci \"Microsoft Teams.app/Contents/Frameworks/Microsoft Teams Helper.app\") -gt 0 ]; then osascript -e 'activate application id \"com.microsoft.teams\"' -e 'tell application \"System Events\" to keystroke \"m\" using {command down, shift down}'; fi"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Change Fn + Spacebar to Shift + Cmd + A",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.microsoft\\.teams$"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "spacebar",
-                                    "modifiers": { "mandatory": ["fn"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "m",
-                                        "modifiers": ["left_shift", "left_gui"]
                                     }
                                 ],
                                 "type": "basic"
